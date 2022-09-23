@@ -1,0 +1,25 @@
+<script src="memo.component.ts"></script>
+<div class="memo">
+
+  <div class="memo-nav">
+
+    <div>{{memo.date | date}}</div>
+
+    <label>
+      Finished
+      <input [(ngModel)]="memo.finished" type="checkbox" (change)="onStatusChange()">
+    </label>
+  </div>
+
+  <p *ngIf='isUpdating === false' class="memo-text">{{memo.text}}</p>
+  <p *ngIf='isUpdating === true' class="memo-text">
+    <input [(ngModel)]="memoCopy.text">
+  </p>
+
+  <div class="memo-footer">
+    <button *ngIf="isUpdating === false" (click)="onDeleteClick()">delete</button>
+    <button *ngIf="isUpdating === false" (click)="onUpdateClick()">update</button>
+    <button *ngIf="isUpdating === true" (click)="onSaveClick()">save</button>
+    <button *ngIf="isUpdating === true" (click)="onCancelClick()">cancel</button>
+  </div>
+</div>

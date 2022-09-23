@@ -1,0 +1,28 @@
+.memo {
+  height: 15rem;
+  width: 15rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: orange;
+  margin: 0.5rem;
+}
+
+.memo > p {
+  flex-grow: 1;
+  padding: 0.5rem;
+}
+
+.memo-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: gainsboro;
+}
+
+.memo-footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.25rem;
+}

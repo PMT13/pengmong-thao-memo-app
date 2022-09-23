@@ -1,0 +1,22 @@
+<label class="switch">
+  <input type="checkbox" id="tabSlider" [(ngModel)]="whichList">
+  <span class="slider round"></span>
+</label>
+<div *ngIf="whichList === false" class="memo-list">
+  <app-memo
+    *ngFor="let memoData of unfinishedList"
+    [memo]="memoData"
+    (onDelete)="onMemoDelete($event)"
+    (onStatus)="onStatusChange($event)"
+    (onUpdate)="onMemoUpdate($event)"
+  ></app-memo>
+</div>
+<div *ngIf="whichList === true" class="memo-list">
+  <app-memo
+    *ngFor="let memoData of finishedList"
+    [memo]="memoData"
+    (onDelete)="onMemoDelete($event)"
+    (onStatus)="onStatusChange($event)"
+    (onUpdate)="onMemoUpdate($event)"
+  ></app-memo>
+</div>

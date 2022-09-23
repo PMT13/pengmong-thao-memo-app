@@ -1,0 +1,15 @@
+<p>calculator works!</p>
+<input #num1 type="number">
+<select #operation>
+  <option>+</option>
+  <option>-</option>
+  <option>*</option>
+  <option>/</option>
+</select>
+<input #num2 type="number">
+<button
+  (click)="onClick(num1.valueAsNumber, operation.value, num2.valueAsNumber)"
+>
+  Submit
+</button>
+<div>Result: {{result}}</div>

@@ -1,0 +1,7 @@
+.memo {
+  display: flex;
+  flex-direction: column;
+
+  background-color: grey;
+  padding: 1rem;
+}
